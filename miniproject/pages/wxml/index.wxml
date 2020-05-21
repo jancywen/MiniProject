@@ -6,7 +6,7 @@
 </view>
 
 <!--  -->
-<image class="userinfo-avatar" src="./free_stock_photo.jpg"></image>
+<image class="userinfo-avatar" src="/images/free_stock_photo.jpg"></image>
 
 <text>当前时间：{{time}}</text>
 
