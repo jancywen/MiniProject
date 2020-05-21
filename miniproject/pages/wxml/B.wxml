@@ -1,0 +1,5 @@
+
+
+<template name="B">
+<text>B template</text>
+</template>

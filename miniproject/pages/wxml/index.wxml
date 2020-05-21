@@ -1,0 +1,68 @@
+<!--pages/wxml/index.wxml-->
+<text>pages/wxml/index.wxml</text>
+
+<view>
+  <text>hello world</text>
+</view>
+
+<!--  -->
+<image class="userinfo-avatar" src="./free_stock_photo.jpg"></image>
+
+<text>当前时间：{{time}}</text>
+
+<text>{{w}}</text>
+
+<text>{{W}}</text>
+
+<view wx:if="{{length > 5}}" > 1 </view>
+<view wx:elif="{{length > 2}}"> 2 </view>
+<view wx:else> 3 </view>
+
+<block wx:if="{{true}}"> 
+<view>view1</view>
+<view>view2</view>
+</block>
+
+<view wx:for="{{dataList}}">
+  {{index}}: {{item.message}}
+</view>
+
+<view wx:for='{{dataList}}' wx:for-index="idx" wx:for-item='itemName'>
+{{idx}}: {{itemName.message}}
+</view>
+
+<view wx:for="{{['天龙八部','少年包青天','雪花女神龙']}}">
+<view>{{index}}</view>
+<view>{{item}}</view>
+</view>
+
+<switch wx:for='{{objectArray}}' wx:key='unique'>{{item.id}}</switch>
+<button bindtap="switch">Switch</button>
+<button bindtap="addToFront">Add to the front</button>
+
+<switch wx:for='{{numberArray}}'>{{item}}</switch>
+<button bindtap='addNumberToFront'>Add Number to the front</button>
+
+<!--  模板 -->
+
+<template name="msgItem">
+  <view>
+    <view>{{index}}: {{msg}}</view>
+    <text>Time: {{time}}</text>
+  </view>
+</template>
+
+<template is="msgItem" data="{{...celldata}}"/>
+
+<template name="cell">
+  <view>{{unique}}</view>
+</template>
+
+<view wx:for='{{objectArray}}'>
+  <template is="cell" data="{{...item}}"/>
+</view>
+
+
+<import src="A.wxml"/>
+<template is="A" />
+<template is="B"/>
