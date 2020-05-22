@@ -1,7 +1,0 @@
-<!--   -->
-<import src="B.wxml"/>
-
-<template name="A">
-  <text>A template</text>
-  <template is="B"/>
-</template>

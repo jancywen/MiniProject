@@ -1,9 +1,33 @@
 {
   "pages":[
-    "pages/wxml/index",
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/home/home",
+    "pages/mine/mine",
+
+    "pages/store/manage/manage",
+    "pages/store/cert/cert",
+
+    "pages/goods/detail/detail",
+    "pages/goods/list/list"
   ],
+  "tabBar":{
+    "color": "#9b9b9b",
+    "selectedColor":"#007AFF",
+    "list": [
+      {
+        "text": "店铺",
+         "pagePath": "pages/home/home",
+         "iconPath": "images/tab_store_unselected.png",
+         "selectedIconPath": "images/tab_store_selected.png",
+         "badge":"10"
+        },
+      {
+        "text": "我的", 
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/tab_mine_unselected.png",
+        "selectedIconPath": "images/tab_mine_selected.png"
+      }
+    ]
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
