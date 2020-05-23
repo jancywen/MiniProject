@@ -9,7 +9,29 @@ Page({
       avatar:"",
       StoreName:"同仁堂大药房",
       Status:"init"
-    }
+    },
+    todayData: [
+      {
+        Item:"销售额（元）",
+        Value: 25.00
+      },
+      {
+        Item:"销售额（元）",
+        Value: 25.00
+      },
+      {
+        Item:"销售额（元）",
+        Value: 25.00
+      },
+      {
+        Item:"销售额（元）",
+        Value: 25.00
+      },
+      {
+        Item:"销售额（元）",
+        Value: 25.00
+      },
+    ]
   },
 
   /**

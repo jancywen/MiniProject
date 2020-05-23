@@ -2,9 +2,10 @@
 
 
 .container{
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
+  background-color: rgb(220/255, 214/255, 214/255);
 }
 
 .background {
@@ -15,13 +16,14 @@
   z-index: -1;
 }
 .header-data {
-  background-image: url("/images/bg.png");
+  background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/202004/zzpic24744.jpg");
 }
 .header {
   display: flex;
   padding-left: 20rpx;
   height: 88rpx;
-  background-color:#007aff;
+  /* background-color:#007aff; */
+  background-color: rgba(0.2, 0.2, 0.2, 0.01);
   align-items: center;
 }
 
@@ -49,18 +51,69 @@
   align-items: center; */
   height: 344rpx;
   background-color:rgba(0.2, 0.2, 0.2, 0.01);
-  background-image: image();
 }
+
 .data-content {
   margin-left: 20rpx;
   margin-right: 20rpx;
   height: 344rpx;
   border-radius: 24rpx;
   background-color: white;
+  /* padding-top: 20rpx; */
+  padding-left: 30rpx;
+  padding-right: 30rpx;
 }
-
+.data-item-view{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  /* justify-content: space-around; */
+  text-align: left;
+  height: 290rpx;
+}
+.data-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 .event-entry {
   height: 400rpx;
-  background-color: sienna;
+  background-color: rgb(220, 214, 214);
   /* background-image: image('/images/bg.png'); */
+}
+.swiper {
+  height: 460rpx;
+}
+.swiper-item {
+  background-color: white;
+}
+
+.swiper-item-bg {
+  height:400rpx;
+  /* background-color: red; */
+  
+  /* display: flex;
+  flex-wrap: wrap;
+  flex-direction: row; */
+  margin:0 auto;
+}
+.entery-item {
+  height: 200rpx;
+  width: 160rpx;
+  /* background-color: yellowgreen; */
+
+  float: left;
+  text-align: center;
+  border: 2rpx solid yellowgreen;
+  /* margin: auto;
+  padding: 2rpx; */
+  /* display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
+.font-14{
+  font-size: 28rpx;
 }

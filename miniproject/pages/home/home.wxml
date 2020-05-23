@@ -1,7 +1,6 @@
 <!--pages/home/home.wxml-->
-<view>
+<view style="background-color: rgb(220, 214, 214);">
 	<view class="header-data">
-		<!-- <image class='background' src="/images/bg.png" mode="top"></image> -->
 		<view class="header">
 			<image class="header-image"></image>
 			<text class="header-store">{{store.StoreName}}</text>
@@ -9,12 +8,39 @@
 		</view>
 		<view class="data-view">
 			<view class="data-content">
-				<!-- <text>数据</text> -->
+				<text style="margin-left=20rpx; margin-top=20rpx">今日数据</text>
+				<view class="data-item-view">
+					<view wx:for="{{todayData}}">
+						<template is="todayDataItem" data="{{...item}}" />
+					</view>
+				</view>
 			</view>
 		</view>
 	</view>
 
 	<view class="event-entry">
+		<swiper class="swiper" indicator-dots="true" indicator-color="rgba(0, 0, 0, .3)" indicator-indicator-color="#679fff">
+			<block wx:for="{{[1, 2]}}" wx:key="*this">
+				<swiper-item class="swiper-item">
+					<view class="swiper-item-bg">
 
+							<view wx:for="{{[1,2,3,4, 5, 6,7]}}" class="entery-item" > 
+								<!-- <image style="width:110rpx; height: 110rpx; border-radius:55rpx; background-color:red;"></image> -->
+								<!-- <text>{{item}}</text> -->
+
+							</view>
+
+					</view>
+				</swiper-item>
+			</block>
+		</swiper>
 	</view>
 </view>
+
+
+<template name="todayDataItem">
+	<view class="data-item">
+		<text class="font-14">{{Item}}</text>
+		<text class="font-14">{{Value}}</text>
+	</view>
+</template>
