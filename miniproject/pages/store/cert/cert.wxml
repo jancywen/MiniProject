@@ -1,2 +1,48 @@
 <!--pages/store/cert/cert.wxml-->
-<text>pages/store/cert/cert.wxml</text>
+<page-meta
+  background-text-style="{{bgTextStyle}}"
+  background-color="{{bgColor}}"
+  background-color-top="{{bgColorTop}}"
+  background-color-bottom="{{bgColorBottom}}"
+  scroll-top="{{scrollTop}}"
+  page-style="color: green"
+  root-font-size="16px"
+>
+<!-- 导航栏 -->
+  <navigation-bar
+    title="{{nbTitle}}"
+    loading="{{nbLoading}}"
+    front-color="{{nbFrontColor}}"
+    background-color="{{nbBackgroundColor}}"
+  />
+</page-meta>
+
+	<!-- 首页轮播导航 -->
+	<template name="bannerListData">
+		<navigator url="{{url}}" hover-class="navigator-hover" class="plate-item">
+      <view class="plate-img">
+				<image src="{{src}}"></image>
+			</view>
+			<text class="plate-info">
+				{{title}}
+			</text>
+		</navigator>
+	</template>
+
+
+
+
+<view>
+	<view class="plate">
+    <view  wx:for="{{bannerList}}" wx:key="id" class="plate-item" bindtap="nav" data-url="{{item.url}}" >
+      <view class="plate-img" >
+        <image src="{{item.src}}"></image>
+      </view>
+      <text>{{item.title}}</text>      
+    </view>
+  </view>
+  <!-- </view>
+		<template wx:for="{{bannerList}}" wx:key="id" is="bannerListData" data="{{...item}}" />
+	</view> -->
+  
+</view>

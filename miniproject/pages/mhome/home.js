@@ -10,26 +10,37 @@ Page({
       StoreName:"同仁堂大药房",
       Status:"init"
     },
+    a1src:'../../images/tab_mine_selected.png',
     todayData: [
       {
+        id:1,
         Item:"销售额（元）",
-        Value: 25.00
+        Value: 1200
       },
       {
-        Item:"销售额（元）",
-        Value: 25.00
+        id:2,
+        Item:"支付订单",
+        Value: 188
       },
       {
-        Item:"销售额（元）",
-        Value: 25.00
+        id:3,
+        Item:"客单价（元）",
+        Value: 99
       },
       {
-        Item:"销售额（元）",
-        Value: 25.00
+        id:4,
+        Item:"客品次",
+        Value: 1200
       },
       {
-        Item:"销售额（元）",
-        Value: 25.00
+        id:5,
+        Item:"新增会员数",
+        Value: 188
+      },
+      {
+        id:5,
+        Item:"上架商品次数",
+        Value: 99
       },
     ],
     bannerList: [

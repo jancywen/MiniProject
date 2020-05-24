@@ -23,13 +23,10 @@
 			<block wx:for="{{[1, 2]}}" wx:key="*this">
 				<swiper-item class="swiper-item">
 					<view class="swiper-item-bg">
-
 							<view wx:for="{{[1,2,3,4, 5, 6,7]}}" class="entery-item" > 
 								<!-- <image style="width:110rpx; height: 110rpx; border-radius:55rpx; background-color:red;"></image> -->
 								<!-- <text>{{item}}</text> -->
-
 							</view>
-
 					</view>
 				</swiper-item>
 			</block>
@@ -44,3 +41,19 @@
 		<text class="font-14">{{Value}}</text>
 	</view>
 </template>
+
+<!-- 首页轮播导航 -->
+	<template name="bannerListData">
+		<navigator url="{{url}}" hover-class="navigator-hover" class="plate-item">
+			<view class="plate-img">
+				<image src="{{src}}"></image>
+			</view>
+			<text class="plate-info">
+				{{title}}
+			</text>
+		</navigator>
+	</template>
+	<view class="plate">
+		<template wx:for="{{bannerList}}" wx:key="id" is="bannerListData" data="{{...item}}" />
+	</view>
+

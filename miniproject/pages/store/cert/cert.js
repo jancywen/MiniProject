@@ -5,8 +5,64 @@ Page({
    * 页面的初始数据
    */
   data: {
+    bgTextStyle: 'dark',
+    scrollTop: '200rpx',
+    bgColor: '#ff0000',
+    bgColorTop: '#00ff00',
+    bgColorBottom: '#0000ff',
+    nbTitle: '标题',
+    nbLoading: false,
+    nbFrontColor: '#000000',
+    nbBackgroundColor: '#ffffff',
 
+    bannerList: [
+      {
+        id:1,
+        src:'/images/tab_mine_selected.png',
+        title: "待办事项",
+        url: "/pages/action/action"
+      },
+      {
+        id:2,
+        src:'/images/tab_mine_selected.png',
+        title: "新增商品",
+        url: "/pages/action/action"
+      },
+      {
+        id:3,
+        src:'/images/tab_mine_selected.png',
+        title: "商品管理",
+        url: "/pages/action/action"
+      },
+      {
+        id:4,
+        src:'/images/tab_mine_selected.png',
+        title: "处方登记",
+        url: "/pages/action/action"
+      },
+      {
+        id:5,
+        src:'/images/tab_mine_selected.png',
+        title: "采购收获",
+        url: "/pages/action/action"
+      },
+      {
+        id:5,
+        src:'/images/tab_mine_selected.png',
+        title: "分析数据",
+        url: "/pages/action/action"
+      },
+    ]
   },
+
+
+nav: function(env) {
+  console.log(env.currentTarget.dataset)
+  wx.showToast({
+    title: env.currentTarget.dataset.url,
+    icon: "none"
+  })
+},
 
   /**
    * 生命周期函数--监听页面加载

@@ -117,3 +117,40 @@
 .font-14{
   font-size: 28rpx;
 }
+
+
+/* 首页轮播导航 */
+.plate{
+  height:480rpx;
+}
+.plate-item{
+
+  float: left;
+  width: 25%;
+  /* text-align: center; */
+  /* float:left;
+  position: relative;
+  width: 25%;
+  height:180rpx;
+  margin-top:40rpx; 
+  margin-left:15rpx;
+  background-color: seagreen;
+  text-align: center; */
+}
+.navigator-hover{
+  background-color: transparent;
+}
+.plate-img image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.plate-info{
+  font-size: 30rpx;
+  /* position: absolute;
+  height:40rpx;
+  font-size: 30rpx;
+  font-family: '微软雅黑';
+  bottom: 60rpx;
+  left:-10rpx;
+  background-color: rebeccapurple; */
+}
