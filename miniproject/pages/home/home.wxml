@@ -8,24 +8,35 @@
 		</view>
 		<view class="data-view">
 			<view class="data-content">
-				<text style="margin-left=40rpx; margin-top=28rpx; font-size:28rpx; height:40rpx">今日数据</text>
+				<!-- <view style="margin-left=20rpx; margin-top=28rpx; font-size:28rpx; height:40rpx">
+					<text style="margin-left=20rpx; margin-top=28rpx; font-size:28rpx; height:40rpx">今日数据</text>
+				</view> -->
+
+				<view style="height:64rpx; background-color:red;">
+					<text style="margin-left:20rpx; font-size:28rpx; height:40rpx">今日数据</text>
+				</view>
 				<!-- <view class="data-item-view">
 					<view wx:for="{{todayData}}">
 						<template is="todayDataItem" data="{{...item}}" />
 					</view>
 				</view> -->
 
-
+				<view style="height:280rpx; background-color:blue; display:flex; flex-wrap: wrap; ">
+					<view wx:for="{{todayData}}" wx:key="Item" style="width:33.3%; height:50%; background-color:red;">
+						<text>{{item.Item}}</text>
+						<text>Value</text>
+					</view>
+				</view>
 
 			</view>
 		</view>
 	</view>
 
-<!-- 快捷入口 -->
+	<!-- 快捷入口 -->
 	<swiper class="swiper" indicator-dots="true" indicator-color="rgba(0, 0, 0, .3)" indicator-indicator-color="#679fff">
 		<block wx:for="{{entryList}}" wx:for-item="itemList" wx:key="*this">
 			<swiper-item class="swiper-item">
-				<view class="plate">
+				<view class="entry-plate">
 					<template wx:for="{{itemList}}" wx:key="id" is="quickEntry" data="{{...item}}"></template>
 				</view>
 			</swiper-item>

@@ -68,6 +68,7 @@
   flex-wrap: wrap;
   align-content: space-around;
   /* justify-content: space-around; */
+  
   text-align: left;
   height: 290rpx;
 }
@@ -85,7 +86,7 @@
   background-color: white;
   margin:0 auto;
 }
-.plate{
+.entry-plate{
   height:400rpx;
   display: flex;
   flex-direction: row;
