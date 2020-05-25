@@ -25,5 +25,26 @@
   height: 100rpx;
 }
 .plate-info{
-  font-size: 30rpx;
+  font-size: 28rpx;
+  
+}
+
+
+.entry-item {
+  width: 25%;
+  height: 50%;
+  
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+
+.swiper {
+  height: 460rpx;
+}
+.swiper-item {
+  background-color: white;
+  margin:0 auto;
 }

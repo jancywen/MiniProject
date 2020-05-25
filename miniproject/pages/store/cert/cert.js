@@ -20,7 +20,7 @@ Page({
         id:1,
         src:'/images/tab_mine_selected.png',
         title: "待办事项",
-        url: "/pages/action/action"
+        url: "/pages/store/manage/manage"
       },
       {
         id:2,
@@ -52,7 +52,70 @@ Page({
         title: "分析数据",
         url: "/pages/action/action"
       },
+    ],
+
+
+    entryList:[
+      [
+        {
+          id:1,
+          src:'/images/tab_mine_selected.png',
+          title: "待办事项",
+          url: "/pages/store/manage/manage"
+        },
+        {
+          id:2,
+          src:'/images/tab_mine_selected.png',
+          title: "新增商品",
+          url: "/pages/action/action"
+        },
+        {
+          id:3,
+          src:'/images/tab_mine_selected.png',
+          title: "商品管理",
+          url: "/pages/action/action"
+        },
+        {
+          id:4,
+          src:'/images/tab_mine_selected.png',
+          title: "处方登记",
+          url: "/pages/action/action"
+        },
+        {
+          id:5,
+          src:'/images/tab_mine_selected.png',
+          title: "采购收获",
+          url: "/pages/action/action"
+        },
+        {
+          id:6,
+          src:'/images/tab_mine_selected.png',
+          title: "分析数据",
+          url: "/pages/action/action"
+        },
+        {
+          id:7,
+          src:'/images/tab_mine_selected.png',
+          title: "分析数据",
+          url: "/pages/action/action"
+        },
+        {
+          id:8,
+          src:'/images/tab_mine_selected.png',
+          title: "分析数据",
+          url: "/pages/action/action"
+        },
+      ],
+      [
+        {
+        id:9,
+        src:'/images/tab_mine_selected.png',
+        title: "分析数据",
+        url: "/pages/action/action"
+        },
+      ]
     ]
+
   },
 
 

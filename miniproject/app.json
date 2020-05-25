@@ -1,13 +1,14 @@
 {
   "pages":[
-    "pages/store/cert/cert",
+    
 
     "pages/home/home",
     "pages/mine/mine",
     "pages/mhome/home",
 
     "pages/store/manage/manage",
-
+    "pages/store/cert/cert",
+    
     "pages/goods/detail/detail",
     "pages/goods/list/list"
   ],
@@ -17,7 +18,7 @@
     "list": [
       {
         "text": "店铺",
-         "pagePath": "pages/store/cert/cert",
+         "pagePath": "pages/home/home",
          "iconPath": "images/tab_store_unselected.png",
          "selectedIconPath": "images/tab_store_selected.png",
          "badge":"10"

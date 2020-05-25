@@ -59,9 +59,9 @@
   height: 344rpx;
   border-radius: 24rpx;
   background-color: white;
-  /* padding-top: 20rpx; */
+  /* padding-top: 20rpx;
   padding-left: 30rpx;
-  padding-right: 30rpx;
+  padding-right: 30rpx; */
 }
 .data-item-view{
   display: flex;
@@ -72,85 +72,31 @@
   height: 290rpx;
 }
 .data-item {
+  width: 50%;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
-.event-entry {
-  height: 400rpx;
-  background-color: rgb(220, 214, 214);
-  /* background-image: image('/images/bg.png'); */
-}
+/*  快捷入口 */
 .swiper {
   height: 460rpx;
 }
 .swiper-item {
   background-color: white;
-}
-
-.swiper-item-bg {
-  height:400rpx;
-  /* background-color: red; */
-  
-  /* display: flex;
-  flex-wrap: wrap;
-  flex-direction: row; */
   margin:0 auto;
 }
-.entery-item {
-  height: 200rpx;
-  width: 160rpx;
-  /* background-color: yellowgreen; */
-
-  float: left;
-  text-align: center;
-  border: 2rpx solid yellowgreen;
-  /* margin: auto;
-  padding: 2rpx; */
-  /* display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-}
-
-.font-14{
-  font-size: 28rpx;
-}
-
-
-/* 首页轮播导航 */
 .plate{
-  height:480rpx;
+  height:400rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-.plate-item{
-
-  float: left;
+.entry-item {
   width: 25%;
-  /* text-align: center; */
-  /* float:left;
-  position: relative;
-  width: 25%;
-  height:180rpx;
-  margin-top:40rpx; 
-  margin-left:15rpx;
-  background-color: seagreen;
-  text-align: center; */
-}
-.navigator-hover{
-  background-color: transparent;
-}
-.plate-img image{
-  width: 100rpx;
-  height: 100rpx;
-}
-.plate-info{
-  font-size: 30rpx;
-  /* position: absolute;
-  height:40rpx;
-  font-size: 30rpx;
-  font-family: '微软雅黑';
-  bottom: 60rpx;
-  left:-10rpx;
-  background-color: rebeccapurple; */
+  height: 50%;
+  
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
