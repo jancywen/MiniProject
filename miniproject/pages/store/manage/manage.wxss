@@ -1,1 +1,11 @@
 /* pages/store/manage/manage.wxss */
+
+
+.container{
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F2F2F2;
+  color: #4a4a4a;
+  flex-direction: column;
+  
+}

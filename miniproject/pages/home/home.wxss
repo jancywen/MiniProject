@@ -16,14 +16,15 @@
   z-index: -1;
 }
 .header-data {
-  background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/202004/zzpic24744.jpg");
+  /* background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/202004/zzpic24744.jpg"); */
+  background-color: white;
 }
 .header {
   display: flex;
   padding-left: 20rpx;
   height: 88rpx;
-  /* background-color:#007aff; */
-  background-color: rgba(0.2, 0.2, 0.2, 0.01);
+  background-color:#007aff;
+  /* background-color: rgba(0.2, 0.2, 0.2, 0.01); */
   align-items: center;
 }
 
@@ -49,8 +50,10 @@
   /* display: flex;
   justify-content: center;
   align-items: center; */
-  height: 344rpx;
-  background-color:rgba(0.2, 0.2, 0.2, 0.01);
+  height: 364rpx;
+  margin-top: 20rpx;
+
+  /* background-color:rgba(0.2, 0.2, 0.2, 0.01); */
 }
 
 .data-content {
@@ -58,10 +61,7 @@
   margin-right: 20rpx;
   height: 344rpx;
   border-radius: 24rpx;
-  background-color: white;
-  /* padding-top: 20rpx;
-  padding-left: 30rpx;
-  padding-right: 30rpx; */
+  box-shadow: 1rpx 1rpx 5rpx 5rpx #8c9fdd;
 }
 .data-item-view{
   display: flex;
