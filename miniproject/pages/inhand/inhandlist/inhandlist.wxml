@@ -1,0 +1,42 @@
+<!--pages/inhand/inhandlist/inhandlist.wxml-->
+<!-- tab 模板 -->
+<template name="tab-item">
+	<view class="tab-item {{selectedState === state ? 'on' : ''}} " bindtap="changeState" data-state="{{state}}">{{state_str}}</view>
+</template>
+<!--  tabs  -->
+<view class="tab">
+	<template is="tab-item" wx:for="{{tabList}}" wx:key="state" data="{{...item, selectedState}}" />
+</view>
+
+<!-- swiper body 模板 -->
+<template name="lbody">
+	<swiper-item>
+		<scroll-view scroll-y="true" style="height:100%; background-color: #f7f7f7">
+			<template is="section" wx:for="{{purchase_list}}" wx:key="supplier" data="{{...item}}" />
+      <view class="footer" >仅展示近3个月数据，更多信息请登录网页端查看~</view>
+		</scroll-view>
+	</swiper-item>
+</template>
+<!-- section 模板 -->
+<template name="section">
+	<view class="section">
+		<view class="section-header">{{supplier}}</view>
+		<template is="cell" wx:for="{{drugs}}" wx:key="id" data="{{...item}}" />
+		<view class="section-footer">{{"一共" + count + "件商品，共¥"+ amount + "元" }}</view>
+	</view>
+</template>
+<!-- cell 模板-->
+<template name="cell">
+	<view class="cell">
+		<image style="width: 140rpx; height: 140rpx; background: greenyellow"></image>
+		<view class="cell-content">
+			<text style="font-size: 28rpx">{{genericName}}</text>
+			<text style="font-size: 22rpx; color:#9b9b9b; margin-top:10rpx; magin-bottom:10rpx">{{"规格：" + spec}}</text>
+			<text style="font-size: 32rpx; color:#D0021B">{{"￥" + price}}</text>
+		</view>
+	</view>
+</template>
+<!-- swiper content -->
+<swiper current="{{selectedState}}" bindchange="swiperChange" style=" height:{{(screen_height - 30) * 2}}rpx; background-color: greenyellow;" >
+	<template is="lbody" wx:for="{{tabList}}" wx:key="state" data="{{...item}}" />
+</swiper>

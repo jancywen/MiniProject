@@ -11,8 +11,9 @@
     "pages/goods/detail/detail",
     "pages/goods/list/list",
 
-    "pages/inhand/entry/entry"
-
+    "pages/inhand/entry/entry",
+    "pages/inhand/inhandlist/inhandlist"
+    
   ],
   "tabBar":{
     "color": "#9b9b9b",

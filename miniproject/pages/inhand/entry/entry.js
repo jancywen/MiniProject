@@ -5,7 +5,44 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    entryList: [
+      {
+        id:"1",
+        icon:'/images/inhand/migo.png',
+        item: '采购对账',
+        url:'/pages/inhand/inhandlist/inhandlist'
+      },
+      {
+        id:"2",
+        icon:'/images/inhand/check.png',
+        item: '盘点任务',
+        url:''
+      },
+      {
+        id:"3",
+        icon:'/images/inhand/maintain.png',
+        item: '养护任务',
+        url:''
+      },
+      {
+        id:"4",
+        icon:'/images/inhand/yinpian.png',
+        item: '中药饮片',
+        url:''
+      },
+      {
+        id:"5",
+        icon:'/images/inhand/recipe.png',
+        item: '处方成（中）药',
+        url:''
+      },
+      {
+        id:"6",
+        icon:'/images/inhand/special.png',
+        item: '特殊药品',
+        url:''
+      },
+    ]
   },
 
   /**

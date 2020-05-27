@@ -1,0 +1,79 @@
+/* pages/inhand/inhandlist/inhandlist.wxss */
+
+
+.tab {
+  height: 60rpx;
+  display: flex;
+}
+
+.tab-item {
+  height: 60rpx;
+  width: 33.3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.on {
+  color: #0079ff;
+  border-bottom: 4rpx solid #0079ff;
+}
+
+.header-item-line {
+  margin-top: 14rpx;
+  width: 100rpx;
+  height: 6rpx;
+  background-color: #017BFE
+}
+
+.section {
+  margin-top: 20rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  padding-right: 30rpx;
+  padding-left: 30rpx;
+}
+
+.section-header {
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #4a4a4a;
+}
+
+.section-footer {
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 28rpx;
+  color: #4a4a4a;
+}
+
+.cell {
+  height: 160rpx;
+  display: flex;
+  align-items: center;
+}
+
+.cell-content {
+  height: 100%;
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer {
+  color: #9b9b9b;
+  height: 160rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx
+}

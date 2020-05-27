@@ -1,2 +1,12 @@
 <!--pages/inhand/entry/entry.wxml-->
 
+<template name="entryItem">
+	<navigator url="{{url}}" open-type="navigate" class="entry-item">
+		<image src="{{icon}}" class="entry-item-image"></image>
+		<text style="font-size:28rpx;">{{item}}</text>
+	</navigator>
+</template>
+
+<view class="entry">
+	<template is="entryItem" wx:for="{{entryList}}" wx:key="id" data="{{...item}}" />
+</view>

@@ -1,1 +1,23 @@
 /* pages/inhand/entry/entry.wxss */
+
+
+.entry {
+  height: 400rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.entry-item {
+  width: 33.3%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.entry-item-image {
+  width: 80rpx;
+  height: 80rpx
+}
