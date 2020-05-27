@@ -10,7 +10,7 @@ Page({
         id:"1",
         icon:'/images/inhand/migo.png',
         item: '采购对账',
-        url:'/pages/inhand/inhandlist/inhandlist'
+        url:'/pages/inhand/purchase/purchase'
       },
       {
         id:"2",

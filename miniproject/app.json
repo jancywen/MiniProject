@@ -12,7 +12,7 @@
     "pages/goods/list/list",
 
     "pages/inhand/entry/entry",
-    "pages/inhand/inhandlist/inhandlist"
+    "pages/inhand/purchase/purchase"
     
   ],
   "tabBar":{

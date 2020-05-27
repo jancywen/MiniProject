@@ -1,4 +1,4 @@
-<!--pages/inhand/inhandlist/inhandlist.wxml-->
+<!--pages/inhand/purchase/purchase.wxml-->
 <!-- tab 模板 -->
 <template name="tab-item">
 	<view class="tab-item {{selectedState === state ? 'on' : ''}} " bindtap="changeState" data-state="{{state}}">{{state_str}}</view>
@@ -28,9 +28,15 @@
 <!-- cell 模板-->
 <template name="cell">
 	<view class="cell">
-		<image style="width: 140rpx; height: 140rpx; background: greenyellow"></image>
+		<view>
+      <image style="width: 140rpx; height: 140rpx; background: greenyellow"></image>
+    </view>
 		<view class="cell-content">
-			<text style="font-size: 28rpx">{{genericName}}</text>
+			<text class="cell-content-generic" >{{genericName}}</text>
+			<text class="cell-content-right" style="font-size: 28rpx">
+			{{"￥" + price}}
+			x {{count}}
+			</text>
 			<text style="font-size: 22rpx; color:#9b9b9b; margin-top:10rpx; magin-bottom:10rpx">{{"规格：" + spec}}</text>
 			<text style="font-size: 32rpx; color:#D0021B">{{"￥" + price}}</text>
 		</view>
