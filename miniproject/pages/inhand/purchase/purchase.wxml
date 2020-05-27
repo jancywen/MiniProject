@@ -1,4 +1,4 @@
-<!--pages/inhand/purchase/purchase.wxml-->
+<!--pages/inhand/inhandlist/inhandlist.wxml-->
 <!-- tab 模板 -->
 <template name="tab-item">
 	<view class="tab-item {{selectedState === state ? 'on' : ''}} " bindtap="changeState" data-state="{{state}}">{{state_str}}</view>
@@ -7,6 +7,7 @@
 <view class="tab">
 	<template is="tab-item" wx:for="{{tabList}}" wx:key="state" data="{{...item, selectedState}}" />
 </view>
+
 
 <!-- swiper body 模板 -->
 <template name="lbody">
@@ -17,7 +18,9 @@
 		</scroll-view>
 	</swiper-item>
 </template>
-<!-- section 模板 -->
+<!--
+  section 模板
+-->
 <template name="section">
 	<view class="section">
 		<view class="section-header">{{supplier}}</view>
@@ -25,15 +28,16 @@
 		<view class="section-footer">{{"一共" + count + "件商品，共¥"+ amount + "元" }}</view>
 	</view>
 </template>
+
 <!-- cell 模板-->
 <template name="cell">
 	<view class="cell">
 		<view>
-      <image style="width: 140rpx; height: 140rpx; background: greenyellow"></image>
-    </view>
+			<image style="width: 140rpx; height: 140rpx; background: greenyellow"></image>
+		</view>
 		<view class="cell-content">
-			<text class="cell-content-generic" >{{genericName}}</text>
-			<text class="cell-content-right" style="font-size: 28rpx">
+			<text class="cell-content-title" style="font-size: 28rpx">{{genericName}}</text>
+			<text class="title-right-top" style="font-size: 28rpx">
 			{{"￥" + price}}
 			x {{count}}
 			</text>
@@ -42,7 +46,8 @@
 		</view>
 	</view>
 </template>
-<!-- swiper content -->
-<swiper current="{{selectedState}}" bindchange="swiperChange" style=" height:{{(screen_height - 30) * 2}}rpx; background-color: greenyellow;" >
+
+
+<swiper style=" height:{{(screen_height - 30) * 2}}rpx; background-color: greenyellow;">
 	<template is="lbody" wx:for="{{tabList}}" wx:key="state" data="{{...item}}" />
 </swiper>
