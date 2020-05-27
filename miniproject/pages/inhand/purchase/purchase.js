@@ -7,10 +7,10 @@ Page({
   data: {
     screen_height:0,
     screen_width: 0,
-    selectedState: 0,
+    selectedState: "1",
     tabList: [
       {
-        state:0,
+        state:"1",
         state_str: '办理中',
         purchase_list:[
           {
@@ -19,7 +19,7 @@ Page({
             drugs: 
             [
               {
-                genericName:'感冒灵颗粒感冒灵颗粒感冒灵颗粒感冒灵颗粒感冒灵颗粒',
+                genericName:'感冒灵颗粒感冒灵颗粒感冒灵颗粒感冒灵颗粒感冒灵颗粒感冒灵颗粒感冒灵颗粒感冒灵颗粒感冒灵颗粒感冒灵颗粒',
                 spec:'120g/包',
                 price:3.5,
                 count:3,
@@ -45,7 +45,7 @@ Page({
             [
               {
                 genericName:'感冒灵颗粒',
-                spec:'120g/包',
+                spec:'100g/包',
                 price:3.5,
                 count:3,
                 icon:'',
@@ -91,7 +91,7 @@ Page({
         ]
       },
       {
-        state:1,
+        state:"2",
         state_str: '已通过',
         purchase_list:[
           {
@@ -120,7 +120,7 @@ Page({
         ]
       },
       {
-        state:2,
+        state:"3",
         state_str: '已驳回',
         purchase_list:[
           {
@@ -233,15 +233,6 @@ Page({
     })
   },
 
-  /**
-   * 滑动切换状态
-   */
-  swiperChange: function(envent) {
-    console.log(envent)
-    this.setData({
-      selectedState: envent.detail.current
-    })
-  },
   /**
    * 请求列表
    */
