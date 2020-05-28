@@ -8,6 +8,11 @@ Page({
     screen_height:0,
     screen_width: 0,
     selectedState: 0,
+    // 下拉刷新相关
+    init_triggered: true,
+    pass_triggered: true,
+    refuse_triggered: true,
+
     tabList: [
       {
         state:0,
@@ -162,7 +167,6 @@ Page({
     })
     wx.getSystemInfo({
       complete: (res) => {
-        console.log(res.windowHeight)
         that.setData({
           screen_width:res.windowWidth,
           screen_height:res.windowHeight
@@ -175,7 +179,11 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    // setTimeout(() => {
+    //   this.setData({
+    //     triggered: true,
+    //   })
+    // }, 1000)
   },
 
   /**
@@ -256,4 +264,49 @@ Page({
       url: '/pages/inhand/purchase/detail/detail?id=' + envent.currentTarget.dataset.id,
     })
   },
+
+/**
+ * 
+ * 下拉刷新相关
+ */
+//下拉
+onPulling(e) {
+  // console.log('onPulling:', e)
+},
+// 触发
+onRefresh(e) {
+  if (this._freshing) return
+  this._freshing = true
+
+  console.log('******' + this.data.init_triggered + '***********')
+  let state = e.currentTarget.dataset.state
+  console.log(state)
+
+  setTimeout(() => {
+    if (state === 0) {
+      this.setData({
+        init_triggered: false,
+      })
+    }else if (state === 1) {
+      this.setData({
+        pass_triggered: false,
+      })
+    }else {
+      this.setData({
+        refuse_triggered: false,
+      })
+    }
+    console.log(this.data.init_triggered)
+    this._freshing = false
+  }, 3000)
+},
+// 复位
+onRestore(e) {
+  console.log('onRestore:', e)
+},
+// 终止
+onAbort(e) {
+  console.log('onAbort', e)
+},
+
 })

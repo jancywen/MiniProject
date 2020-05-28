@@ -4,9 +4,10 @@
 <view class="state" style="color: {{purchaseDetail.state === 2 ? '#D0021B' : '#017BFE'}}">
 {{purchaseDetail.state === 0 ? "待对账" : (purchaseDetail.state === 1 ? "已完成" : "已驳回")}}
 </view>
-<!-- <view wx:if="{{purchaseDetail.state === 2}}">
-  <text class="reason">拒绝理由</text>
-</view> -->
+<view wx:if="{{purchaseDetail.state === 2}}" class="reason">
+  <text style="margin-right: 20rpx; color: #4a4a4a" >驳回理由</text>
+  <text>拒绝理由</text>
+</view>
 
 <!-- 药品 section 模板 -->
 <template name="section">
@@ -19,7 +20,7 @@
 
 <!-- 药品 cell 模板-->
 <template name="cell">
-	<view class="cell">
+	<view class="cell" bindtap="drugDeatail" data-drugId="{{id}}">
 		<view>
 			<image style="width: 140rpx; height: 140rpx; background: greenyellow" src="/images/drug_icon.png"></image>
 		</view>
@@ -40,11 +41,12 @@
 </view>
 
 <!-- 冷链跟踪表 -->
-<!-- 药品 section 模板 -->
+<!-- 冷链跟踪表 section 模板 -->
 <template name="cold-chin-section">
 	<view class="section">
 		<view class="section-header">{{"冷链追踪表"}}</view>
-    <template is="cold-chin-cell" wx:for="{{[{name:'运输单位', value:'广东创美药业有限公司'},{name:'运输工具', value:'冷藏箱'},{name:'发货时温度', value:'6.8 ℃'},{name:'启运时间', value:'2019-11-11'},{name:'送货员', value:'张三'}]}}" wx:key="*this" data="{{...item}}"/>
+		<wxs src='./detail.wxs' module="tools"/>
+    <template is="cold-chin-cell" wx:for="{{tools.operateColdChin(purchaseDetail)}}" wx:key="*this" data="{{...item}}"/>
 		<view class="section-footer" style="height:20rpx"></view>
 	</view>
 </template>
@@ -54,8 +56,8 @@
     <text>{{value}}</text>
   </view>
 </template>
-<view>
-  <template is="cold-chin-section" data="{{...purchaseDetail}}"/>
+<view wx:if='{{purchaseDetail.ColdChainSwitch === 1}}'>
+  <template is="cold-chin-section" data="{{...purchaseDetail, purchaseDetail}}"/>
 </view>
 
 <view>
@@ -70,13 +72,13 @@
 
 <view wx:if="{{purchaseDetail.state === 0}}">
   <view class="btns-content" >
-    <view class="btn-refuse"> 
+    <view class="btn-refuse" bindtap="refusePurchase"> 
       <text>驳回</text>
     </view>
-    <view class="btn-pass">
+    <view class="btn-pass" bindtap="passPurchase">
       <text>通过</text>
     </view>
   </view>
 </view>
-<view wx:else style="height: 200rpx">
+<view wx:else style="height: 100rpx">
 </view>

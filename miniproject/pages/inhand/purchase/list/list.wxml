@@ -12,7 +12,19 @@
 <!-- swiper body 模板 -->
 <template name="lbody">
 	<swiper-item>
-		<scroll-view scroll-y="true" style="height:100%; background-color: #f7f7f7">
+		<scroll-view scroll-y="true" 
+			style="height:100%; background-color: #f7f7f7"
+			refresher-enabled="{{true}}"
+  		refresher-threshold="{{100}}"
+  		refresher-default-style="white"
+  		refresher-background="lightgreen"
+  		bindrefresherpulling="onPulling"
+  		bindrefresherrefresh="onRefresh"
+  		bindrefresherrestore="onRestore"
+  		bindrefresherabort="onAbort" 
+			data-state="{{state}}"
+			refresher-triggered="{{state === 0 ? init_triggered: state === 1 ? pass_triggered : refuse_triggered}}"
+		>
 			<template is="section" wx:for="{{purchase_list}}" wx:key="supplier" data="{{...item}}" />
       <view class="footer" >仅展示近3个月数据，更多信息请登录网页端查看~</view>
 		</scroll-view>

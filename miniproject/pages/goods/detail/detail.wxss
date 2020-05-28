@@ -1,1 +1,11 @@
 /* pages/goods/detail/detail.wxss */
+
+page{
+  background-color: #f7f7f7;
+}
+
+.container {
+  height: 400rpx;
+  width: 100%;
+  /* background-color: rgb(44, 58, 53); */
+}

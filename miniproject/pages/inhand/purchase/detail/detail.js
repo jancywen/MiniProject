@@ -113,18 +113,40 @@ Page({
       ],
       count: 3,
       amount:25.60,
-      state: 2,
+      state: 0,
       creator:"",
       creattime:"2020-05-07",
-      coldchain: {
-
-      },
+      // 冷链 1开2关
+      ColdChainSwitch:1,
+      TransportUnit:"广东创美药业有限公司",
+      MeansOfTransport:"冷藏车",
+      TemperatureAtDelivery:"5.8℃",
+      DepartureTime:"2020-02-03",
+      Deliveryman:"阿狗"
     }
+
+
 
     this.setData({
       purchaseDetail:info,
     })
 
-    console.log(this.data.purchaseDetail)
+    // console.log(this.data.purchaseDetail)
+  },
+
+  /**
+   * 商品详情
+   */
+  drugDeatail: function(envent) {
+    wx.navigateTo({
+      url: '/pages/goods/detail/detail?id=' + envent.currentTarget.dataset.drugid,
+    })
+  },
+
+  refusePurchase: function() {
+    console.log('refusePurchase')
+  },
+  passPurchase:function() {
+    console.log('passPurchase')
   }
 })

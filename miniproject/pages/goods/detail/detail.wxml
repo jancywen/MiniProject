@@ -1,2 +1,27 @@
 <!--pages/goods/detail/detail.wxml-->
-<text>pages/goods/detail/detail.wxml</text>
+
+<swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" bindchange="bindChange" bindtap="bindTap" style="height: 360rpx;">
+	<block wx:for="{{drugInfo.images}}" wx:key="*this">
+		<swiper-item>
+			<view>
+				<image src="{{item}}" style="width:100%; background-color:greenyellow"></image>
+			</view>
+		</swiper-item>
+	</block>
+</swiper>
+
+<view style="height: 120rpx; background-color:#fff">
+
+</view>
+
+<view style=" margin-top:20rpx; height:440rpx; background-color:#fff">
+商品参数
+</view>
+
+<view style=" margin-top:20rpx;  background-color:#fff">
+商品批次
+
+<view wx:for="{{[1,2,3]}}" wx:key="*this" style="height: 320rpx">
+  {{"批次" + item}}
+</view>
+</view>

@@ -1,0 +1,15 @@
+
+var operateColdChin = function(data) {
+
+  return  [{name:'运输单位', value:data.TransportUnit}, 
+  {name:'运输工具', value:data.MeansOfTransport},
+  {name:'发货时温度', value:data.TemperatureAtDelivery},
+  {name:'启运时间', value:data.DepartureTime},
+  {name:'送货员', value:data.Deliveryman}, 
+  {name:'到货温度',value: data.TemperatureUponArrival}]
+
+}
+
+module.exports = {
+  operateColdChin: operateColdChin
+}

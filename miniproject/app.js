@@ -32,8 +32,18 @@ App({
         }
       }
     })
+
+    // 获取基本信息
+    wx.getSystemInfo({
+      complete: (res) => {
+        this.globalData.screen_height = res.windowHeight
+        this.globalData.screen_width = res.windowWidth
+      },
+    })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    screen_width:0,
+    screen_height:0,
   }
 })
