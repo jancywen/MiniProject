@@ -1,4 +1,4 @@
-// pages/inhand/inhandlist/inhandlist.js
+// pages/inhand/purchase/list/list.js
 Page({
 
   /**
@@ -7,10 +7,10 @@ Page({
   data: {
     screen_height:0,
     screen_width: 0,
-    selectedState: "1",
+    selectedState: 0,
     tabList: [
       {
-        state:"1",
+        state:0,
         state_str: '办理中',
         purchase_list:[
           {
@@ -91,7 +91,7 @@ Page({
         ]
       },
       {
-        state:"2",
+        state:1,
         state_str: '已通过',
         purchase_list:[
           {
@@ -120,7 +120,7 @@ Page({
         ]
       },
       {
-        state:"3",
+        state:2,
         state_str: '已驳回',
         purchase_list:[
           {
@@ -232,12 +232,28 @@ Page({
       selectedState: s
     })
   },
-
+ /**
+   * 滑动切换状态
+   */
+  swiperChange: function(envent) {
+    console.log(envent)
+    this.setData({
+      selectedState: envent.detail.current
+    })
+  },
   /**
    * 请求列表
    */
   queryList: function() {
 
-  }
-
+  },
+  /**
+  * purchaseDetail
+  */
+  purchaseDetail:function(envent) {
+    
+    wx.navigateTo({
+      url: '/pages/inhand/purchase/detail/detail?id=' + envent.currentTarget.dataset.id,
+    })
+  },
 })

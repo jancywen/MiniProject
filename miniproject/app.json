@@ -12,7 +12,8 @@
     "pages/goods/list/list",
 
     "pages/inhand/entry/entry",
-    "pages/inhand/purchase/purchase"
+    "pages/inhand/purchase/list/list",
+    "pages/inhand/purchase/detail/detail"
     
   ],
   "tabBar":{

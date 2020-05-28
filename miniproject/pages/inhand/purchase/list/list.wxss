@@ -1,5 +1,4 @@
-/* pages/inhand/inhandlist/inhandlist.wxss */
-
+/* pages/inhand/purchase/list/list.wxss */
 
 .tab {
   height: 60rpx;
@@ -19,6 +18,7 @@
 .on {
   color: #0079ff;
   border-bottom: 4rpx solid #0079ff;
+  box-sizing: border-box;
 }
 
 .header-item-line {
@@ -83,7 +83,7 @@
   position: absolute;
   top: -40rpx;
   right: 10rpx;
-  color:#9b9b9b;
+  color:#4a4a4a;
   text-align: right;
 }
 

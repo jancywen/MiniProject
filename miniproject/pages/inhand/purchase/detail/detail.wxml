@@ -1,0 +1,82 @@
+<!--pages/inhand/purchase/detail/detail.wxml-->
+
+<!-- 状态 -->
+<view class="state" style="color: {{purchaseDetail.state === 2 ? '#D0021B' : '#017BFE'}}">
+{{purchaseDetail.state === 0 ? "待对账" : (purchaseDetail.state === 1 ? "已完成" : "已驳回")}}
+</view>
+<!-- <view wx:if="{{purchaseDetail.state === 2}}">
+  <text class="reason">拒绝理由</text>
+</view> -->
+
+<!-- 药品 section 模板 -->
+<template name="section">
+	<view class="section">
+		<view class="section-header">{{supplier}}</view>
+		<template is="cell" wx:for="{{drugs}}" wx:key="id" data="{{...item}}" />
+		<view class="section-footer">{{"一共" + count + "件商品，共¥"+ amount + "元" }}</view>
+	</view>
+</template>
+
+<!-- 药品 cell 模板-->
+<template name="cell">
+	<view class="cell">
+		<view>
+			<image style="width: 140rpx; height: 140rpx; background: greenyellow" src="/images/drug_icon.png"></image>
+		</view>
+		<view class="cell-content">
+			<text class="cell-content-title" style="font-size: 28rpx">{{genericName}}</text>
+			<text class="title-right-top" style="font-size: 28rpx">
+			{{"￥" + price}}
+			x {{count}}
+			</text>
+			<text style="font-size: 22rpx; color:#9b9b9b; margin-top:10rpx; magin-bottom:10rpx">{{"规格：" + spec}}</text>
+			<text style="font-size: 32rpx; color:#D0021B">{{"￥" + price}}</text>
+		</view>
+	</view>
+</template>
+<!-- 药品 -->
+<view>
+  <template is="section" data="{{...purchaseDetail}}"/>
+</view>
+
+<!-- 冷链跟踪表 -->
+<!-- 药品 section 模板 -->
+<template name="cold-chin-section">
+	<view class="section">
+		<view class="section-header">{{"冷链追踪表"}}</view>
+    <template is="cold-chin-cell" wx:for="{{[{name:'运输单位', value:'广东创美药业有限公司'},{name:'运输工具', value:'冷藏箱'},{name:'发货时温度', value:'6.8 ℃'},{name:'启运时间', value:'2019-11-11'},{name:'送货员', value:'张三'}]}}" wx:key="*this" data="{{...item}}"/>
+		<view class="section-footer" style="height:20rpx"></view>
+	</view>
+</template>
+<template name="cold-chin-cell">
+  <view class="cold-chin-cell"> 
+    <text style="width: 200rpx">{{name}}</text>
+    <text>{{value}}</text>
+  </view>
+</template>
+<view>
+  <template is="cold-chin-section" data="{{...purchaseDetail}}"/>
+</view>
+
+<view>
+	<view class="section">
+		<view class="section-header" style="height:20rpx"></view>
+    <template is="cold-chin-cell" 
+    wx:for="{{[{name:'采购收货单号', value:'DR16283628323874824'},{name:'制单人', value:'阿狗'},{name:'制单时间', value:'2020-05-07'}]}}"
+     wx:key="*this" data="{{...item}}"/>
+		<view class="section-footer" style="height:20rpx"></view>
+	</view>
+</view>
+
+<view wx:if="{{purchaseDetail.state === 0}}">
+  <view class="btns-content" >
+    <view class="btn-refuse"> 
+      <text>驳回</text>
+    </view>
+    <view class="btn-pass">
+      <text>通过</text>
+    </view>
+  </view>
+</view>
+<view wx:else style="height: 200rpx">
+</view>
