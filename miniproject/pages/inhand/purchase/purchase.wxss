@@ -1,3 +1,5 @@
+/* pages/inhand/inhandlist/inhandlist.wxss */
+
 
 .tab {
   height: 60rpx;
@@ -57,6 +59,7 @@
   height: 160rpx;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .cell-content {
@@ -66,8 +69,7 @@
   flex-direction: column;
   justify-content: center;
 }
-.cell-content-generic {
-  font-size: 28rpx;
+.cell-content-title{
   width: 400rpx;
   display: -webkit-box;
   overflow: hidden;
@@ -77,13 +79,14 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-.cell-content-right {
+.title-right-top{
   position: absolute;
   top: -40rpx;
   right: 10rpx;
   color:#9b9b9b;
   text-align: right;
 }
+
 .footer {
   color: #9b9b9b;
   height: 160rpx;
