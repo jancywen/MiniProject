@@ -32,13 +32,13 @@ Page({
           id:2,
           src:'/images/quick-entry/new-goods.png',
           title: "新增商品",
-          url: "/pages/action/action"
+          url: "/pages/goods/add/add"
         },
         {
           id:3,
           src:'/images/quick-entry/goods-manage.png',
           title: "商品管理",
-          url: "/pages/action/action"
+          url: "/pages/form/form-check-box/form-check-box"
         },
         {
           id:4,

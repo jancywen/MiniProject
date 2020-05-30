@@ -1,0 +1,81 @@
+<!--pages/form/form-check-box/form-check-box.wxml-->
+
+<view>
+
+	<view>
+		<view>默认样式</view>
+		<label>
+			<checkbox value="cb" checked="true">选中</checkbox>
+		</label>
+		<label>
+			<checkbox value="cb" checked="{{false}}">未选中</checkbox>
+		</label>
+	</view>
+
+	<view>
+		<view>推荐展示的样式</view>
+		<view style="border-bottom: 1rpx solid greenyellow;">
+			<checkbox-group>
+				<label wx:for="{{items}}" wx:key="value" style="height:88rpx; display:flex; margin-left:20rpx; align-items:center; border-bottom: 1rpx solid greenyellow;">
+					<view>
+						<checkbox value="{{item.value}}" checked="checked" />
+					</view>
+					<view>{{item.name}}</view>
+				</label>
+			</checkbox-group>
+		</view>
+	</view>
+</view>
+
+<view>
+
+	<form catchsubmit="formSubmit" catchreset="formReset">
+		<view>
+			<view>switch</view>
+			<switch name="switch"></switch>
+		</view>
+
+		<view>
+			<view>radio</view>
+			<radio-group name="radio">
+				<label>
+					<radio value="radio1">选项一</radio>
+				</label>
+				<label>
+					<radio value="radio2">选项二</radio>
+				</label>
+        <label>
+					<radio value="radio3">选项三</radio>
+				</label>
+			</radio-group>
+		</view>
+
+		<view>
+			<view>checkbox</view>
+			<checkbox-group name="checkbox">
+				<label>
+					<checkbox value="checkbox1">选项一</checkbox>
+				</label>
+				<label>
+					<checkbox value="checkbox2">选项二</checkbox>
+				</label>
+			</checkbox-group>
+		</view>
+
+		<view>
+			<view>slider</view>
+			<slider name="slider" value="20" show-value></slider>
+		</view>
+
+		<view>
+			<view>input</view>
+			<input name="input" placeholder="这是一个输入框" style="height:80rpx; border-top:1rpx solid greenyellow; border-bottom:1rpx solid greenyellow; text-align:right; padding-right:30rpx;"></input>
+		</view>
+
+		<view>
+			<button style="margin:30rpx 0;" type="primary" form-type="submit">Submit</button>
+			<button style="margin:30rpx 0;" type="warn" form-type="reset">reset</button>
+		</view>
+
+	</form>
+</view>

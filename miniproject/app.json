@@ -10,10 +10,13 @@
     
     "pages/goods/detail/detail",
     "pages/goods/list/list",
+    "pages/goods/add/add",
 
     "pages/inhand/entry/entry",
     "pages/inhand/purchase/list/list",
-    "pages/inhand/purchase/detail/detail"
+    "pages/inhand/purchase/detail/detail",
+
+    "pages/form/form-check-box/form-check-box"
     
   ],
   "tabBar":{

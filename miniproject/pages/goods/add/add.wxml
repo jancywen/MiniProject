@@ -1,0 +1,127 @@
+<!--pages/goods/add/add.wxml-->
+
+<view>
+
+	<form catchsubmit="formSubmit">
+
+
+		<view class="selection-cell">
+			<view>商品类型</view>
+			<picker name="goodstype" range="{{goods_types}}" value="{{goods_type_index}}" bindchange="goodsTypeChange">
+				<view>{{goods_types[goods_type_index] + " >"}}</view>
+			</picker>
+		</view>
+
+		<view wx:if="{{goods_type_index == 1}}" class="selection-cell">
+			<view>拆零商品</view>
+			<picker name="parentgoods" range="{{drugs}}" range-key="drug_name" value="{{drug_index}}" bindchange="drugChange">
+				<view>{{drugs[drug_index].drug_name + " >"}}</view>
+			</picker>
+		</view>
+
+		<view class="selection-cell">
+			<view>{{"条形码 " + bar_code}}</view>
+			<view bindtap="scan" style="background-color: #0076ff; color:#fff;   border-radius: 8rpx; padding: 4rpx 10rpx;">扫描</view>
+		</view>
+
+		<view class="selection-cell">
+			<view>国家标准</view>
+			<picker name="standard" range="{{government_standard}}" value="{{government_standard_index}}" bindchange="government_standard_change">
+				<view>{{government_standard[government_standard_index] + " >"}}</view>
+			</picker>
+		</view>
+
+		<view wx:if="{{government_standard[government_standard_index] != '无'}}" class="selection-cell">
+			<view>{{government_standard[government_standard_index]}}</view>
+			<input name="approvenumber" placeholder="{{'请输入' + government_standard[government_standard_index]}}" value="{{approve_number}}" style="text-align:right;"></input>
+		</view>
+
+		<view class="match">匹配</view>
+
+		<view class="general_name">
+			<textarea name="general_name" maxlength="50" placeholder="商品通用名" />
+		</view>
+
+    <view class="selection-cell">
+			<view>贮藏条件</view>
+			<picker name="goodstype" range="{{store_types}}" value="{{store_index}}" bindchange="store_type_change">
+				<view>{{store_types[store_index] + " >"}}</view>
+			</picker>
+		</view>
+
+    <view class="selection-cell">
+			<view>是否外用</view>
+			<picker name="external_use" range="{{mutual_types}}" value="{{external_use}}" bindchange="external_use_change">
+				<view>{{mutual_types[external_use] + " >"}}</view>
+			</picker>
+		</view>
+
+    <view class="selection-cell">
+			<view>是否医保</view>
+			<picker name="medical_insurance" range="{{mutual_types}}" value="{{medical_insurance}}" bindchange="medical_insurance_change">
+				<view>{{mutual_types[medical_insurance] + " >"}}</view>
+			</picker>
+		</view>
+    <view class="selection-cell">
+			<view>库存单位</view>
+			<picker name="storage_unit" range="{{storage_units}}" value="{{storage_index}}" bindchange="storage_unit_change">
+				<view>{{storage_units[storage_index] + " >"}}</view>
+			</picker>
+		</view>
+
+		<view class="selection-cell">
+			<view>规格</view>
+			<input name="spec" placeholder="请输入规格" value="{{spec}}" style="text-align:right;"></input>
+		</view>
+
+    <view class="selection-cell">
+			<view>生产企业</view>
+			<picker name="company" range="{{companys}}" value="{{company_index}}" bindchange="company_unit_change" style="width:200rpx; text-align:right;">
+				<view>{{companys[company_index] + " >"}}</view>
+			</picker>
+		</view>
+
+		<view class="selection-cell">
+			<view>产地</view>
+			<input name="origin" placeholder="请输入" value="{{origin}}" style="text-align:right;"></input>
+		</view>
+    <view class="selection-cell">
+			<view>详细地址</view>
+			<input name="address" placeholder="请输入" value="{{address}}" style="text-align:right;"></input>
+		</view>
+    <view class="selection-cell">
+			<view>电话</view>
+			<input name="tel" placeholder="请输入" value="{{tel}}" style="text-align:right;"></input>
+		</view>
+
+    <view class="selection-cell" style="margin-top: 20rpx">
+			<view>GSP管控</view>
+			<picker name="gsp" range="{{gsp_list}}" value="{{gsp_index}}" bindchange="gsp_change" style="width:200rpx; text-align:right;">
+				<view>{{gsp_list[gsp_index] + " >"}}</view>
+			</picker>
+		</view>
+    <view class="selection-cell" style="margin-bottom: 20rpx">
+			<view>类别</view>
+			<picker name="category" range="{{category_list}}" value="{{category_index}}" bindchange="category_change" style="width:200rpx; text-align:right;">
+				<view>{{category_list[category_index] + " >"}}</view>
+			</picker>
+		</view>
+
+    <view class="selection-cell" style="margin-bottom: 20rpx">
+			<view>分类</view>
+			<picker name="sort" range="{{sort_list}}" value="{{sort_index}}" bindchange="sort_change" style="width:200rpx; text-align:right;">
+				<view>{{sort_list[sort_index] + " >"}}</view>
+			</picker>
+		</view>
+    <view class="selection-cell">
+			<view>销售价</view>
+			<input name="price" placeholder="请输入" value="{{price}}" style="text-align:right;"></input>
+		</view>
+    <view class="selection-cell">
+			<view>会员价</view>
+			<input name="member_price" placeholder="请输入" value="{{member_price}}" style="text-align:right;"></input>
+		</view>
+
+		<button type="primary" form-type="submit" style="margin: 50rpx auto; width: 600rpx">提交</button>
+	</form>
+</view>

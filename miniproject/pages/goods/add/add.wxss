@@ -1,0 +1,37 @@
+/* pages/goods/add/add.wxss */
+page {
+  background-color: #f2f2f2;
+}
+
+.selection-cell {
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+  background-color: #fff;
+  font-size: 28rpx;
+}
+
+.match {
+  height: 80rpx;
+  margin: 20rpx 40rpx;
+  border-radius: 16rpx;
+  border: 2rpx solid #0079ff;
+  background-color: #bdc8eb;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.general_name {
+  height: 120rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+  background-color: #fff;
+  font-size: 28rpx;
+}
