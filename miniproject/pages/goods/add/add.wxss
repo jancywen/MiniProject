@@ -52,10 +52,19 @@ page {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .add_image_text {
   font-size: 28rpx;
   color: #9b9b9b;
   padding: 10rpx 0rpx;
+}
+
+.remove {
+  position: absolute;
+  top: 0rpx;
+  right: 20rpx;
+  width: 40rpx;
+  height:40rpx;
 }

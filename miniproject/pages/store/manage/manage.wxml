@@ -2,33 +2,33 @@
 
 <view>
 	<!-- 选中数据 -->
-	<view style="height:400rpx; background-color:#F2F2F2;">
-		<view style="height: 30rpx; padding-left:36rpx; padding-top:30rpx">
-			<text style="font-size:28rpx; color: #4a4a4a">店铺页顶显示数据</text>
+	<view class="selected_data">
+		<view class="selected_data_title">
+			<text>店铺页顶显示数据</text>
 		</view>
-		<view style="height: 300rpx;  display:flex; flex-wrap:wrap;margin:20rpx; ">
-			<view wx:for="{{todayData}}" wx:key="Id" style=" width: 33.3%; height:50%; display:flex; justify-content:center; align-items:center;">
-				<view style="background-color:white; width:200rpx; height:88rpx; ">
-					<image style="height:32rpx; width:32rpx;" src="/images/remove.png" bindtap="changeSwitchState" data-id="{{item.Id}}" data-state="{{item.State}}"></image>
-					<text style="font-size:28rpx">{{item.Metric}}</text>
+		<view class="selected_data_content">
+			<view wx:for="{{todayData}}" wx:key="Id" class="selected_data_item">
+				<view class="selected_data_item_bg">
+					<text class="item_title">{{item.Metric}}</text>
+					<image class="remove" src="/images/remove.png" bindtap="changeSwitchState" data-id="{{item.Id}}" data-state="{{item.State}}"></image>
 				</view>
 			</view>
 		</view>
 	</view>
 
 
-  <view wx:for="{{switchList}}" wx:key="*this" wx:for-item="switchGroup" >
-    <view style="height:88rpx; background-color:#f7f7f7">
-    <text style="margin-left:20rpx; font-size:28rpx; color: #4a4a4a">{{switchGroup.Category}}</text>
-    </view>
-    <view wx:for="{{switchGroup.List}}" wx:key="Id" wx:for-item="switchItem" style="height: 88rpx; display:flex; justify-content:space-between; align-items: center;">
-      <view>
-        <text style="margin-left:20rpx">{{switchItem.Metric}}</text>
-        <text bindtap="showDescription" data-Description="{{switchItem.Description}}" hidden="{{switchItem.Description === ''}}"> ？</text>
-      </view>
-      <switch checked="{{switchItem.State === 'On'}}" style="margin-right:20rpx" bindtap="changeSwitchState" data-id="{{switchItem.Id}}" data-state="{{switchItem.State}}"></switch>
-    </view>
-  </view>
+	<view wx:for="{{switchList}}" wx:key="*this" wx:for-item="switchGroup">
+		<view  class="section_header" >
+			<text>{{switchGroup.Category}}</text>
+		</view>
+		<view wx:for="{{switchGroup.List}}" wx:key="Id" wx:for-item="switchItem" class="cell">
+			<view>
+				<text style="margin-left:20rpx">{{switchItem.Metric}}</text>
+				<text bindtap="showDescription" data-Description="{{switchItem.Description}}" hidden="{{switchItem.Description === ''}}"> ？</text>
+			</view>
+			<switch checked="{{switchItem.State === 'On'}}" style="margin-right:20rpx" bindtap="changeSwitchState" data-id="{{switchItem.Id}}" data-state="{{switchItem.State}}"></switch>
+		</view>
+	</view>
 
 
 </view>

@@ -1,7 +1,7 @@
 /* pages/home/home.wxss */
 
 
-.container{
+.container {
   /* display: flex;
   flex-direction: column;
   justify-content: center; */
@@ -11,39 +11,43 @@
 .background {
   width: 100%;
   height: 100%;
-  position:fixed; 
-  background-size:100% 100%;
+  position: fixed;
+  background-size: 100% 100%;
   z-index: -1;
 }
+
 .header-data {
   /* background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/202004/zzpic24744.jpg"); */
   background-color: white;
 }
+
 .header {
   display: flex;
   padding-left: 20rpx;
   height: 88rpx;
-  background-color:#007aff;
+  background-color: #007aff;
   /* background-color: rgba(0.2, 0.2, 0.2, 0.01); */
   align-items: center;
 }
 
-.header-image{
+.header-image {
   width: 70rpx;
   height: 70rpx;
   background-color: springgreen;
   border-radius: 35rpx;
 }
+
 .header-store {
   color: white;
   font-size: 28rpx;
   margin-left: 10rpx;
 }
+
 .header-status {
   color: white;
   font-size: 28rpx;
   margin-right: 30rpx;
-  margin-left:auto;
+  margin-left: auto;
 }
 
 .data-view {
@@ -63,39 +67,69 @@
   border-radius: 24rpx;
   box-shadow: 1rpx 1rpx 5rpx 5rpx #8c9fdd;
 }
-.data-item-view{
+
+.data-header {
+  height: 64rpx;
+  background-color: transparent;
+  padding-left: 20rpx;
+  padding-top: 20rpx;
+  font-size: 28rpx;
+}
+
+.data-items {
+  height: 280rpx;
+  background-color: transparent;
   display: flex;
   flex-wrap: wrap;
-  align-content: space-around;
-  /* justify-content: space-around; */
-  
-  text-align: left;
-  height: 290rpx;
 }
+
 .data-item {
-  width: 50%;
+  width: 33.3%;
+  height: 50%;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
+
+.item-title {
+  font-size: 28rpx;
+  margin-left: 30rpx;
+  margin-top: 12rpx;
+  margin-right: 10rpx;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-value {
+  font-size: 28rpx;
+  margin-left: 30rpx;
+  margin-top: 12rpx;
+  color: #007aff
+}
+
 /*  快捷入口 */
 .swiper {
   height: 460rpx;
 }
+
 .swiper-item {
   background-color: white;
-  margin:0 auto;
+  margin: 0 auto;
 }
-.entry-plate{
-  height:400rpx;
+
+.entry-plate {
+  height: 400rpx;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .entry-item {
   width: 25%;
   height: 50%;
-  
+
   display: flex;
   flex-direction: column;
   align-content: center;

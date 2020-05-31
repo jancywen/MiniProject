@@ -1,11 +1,70 @@
 /* pages/store/manage/manage.wxss */
 
 
-.container{
+.selected_data {
+  height: 400rpx;
+  background-color: #F2F2F2;
+}
+
+.selected_data_title {
+  height: 60rpx;
+  padding-left: 36rpx;
+  padding-top: 30rpx;
+  font-size: 28rpx;
+  color: #4a4a4a;
+}
+
+.selected_data_content {
+  height: 300rpx;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20rpx;
+}
+
+.selected_data_item {
+  width: 33.3%;
+  height: 50%;
+}
+
+.selected_data_item_bg {
+  background-color: white;
+  width: 200rpx;
+  height: 88rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item_title {
+  font-size: 28rpx;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.remove {
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.section_header {
+  height: 88rpx;
+  background-color: #f7f7f7;
+  padding-left: 20rpx;
+  font-size: 28rpx;
+  color: #4a4a4a;
+  display: flex;
+  align-items: center;
+}
+
+.cell {
+  height: 88rpx;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #F2F2F2;
-  color: #4a4a4a;
-  flex-direction: column;
-  
 }

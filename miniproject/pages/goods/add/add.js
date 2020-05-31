@@ -182,6 +182,13 @@ Page({
     })
   }, 
   /**
+   * 
+   * @param {*} e 
+   */
+  match_drug: function(e) {
+    console.log('匹配')
+  },
+  /**
   * 
   */
   show_image: function(e) {
@@ -211,7 +218,15 @@ Page({
       })
     }
   },
-
+  remove_image: function(e){
+    console.log(e.currentTarget.dataset.index)
+    let index = e.currentTarget.dataset.index
+    var list = this.data.image_list
+    list.splice(index, 1)
+    this.setData({
+      image_list:list
+    })
+  },
   /**
    * 贮藏条件
    */

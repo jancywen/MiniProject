@@ -1,5 +1,5 @@
 <!--pages/home/home.wxml-->
-<view style="background-color: rgb(220, 214, 214);">
+<view>
 	<view class="header-data">
 		<view class="header">
 			<image class="header-image" src="/images/quick-entry/icon.png"></image>
@@ -8,13 +8,13 @@
 		</view>
 		<view class="data-view" bindtap="storeManage">
 			<view class="data-content">
-				<view style="height:64rpx; background-color:transparent; padding-left:20rpx; padding-top:20rpx">
-					<text style=" font-size:28rpx; height:40rpx">今日数据</text>
+				<view class="data-header">
+					<text>今日数据</text>
 				</view>
-				<view style="height:280rpx; background-color:transparent; display:flex; flex-wrap: wrap; ">
-					<view wx:for="{{todayData}}" wx:key="Item" style="width:33.3%; height:50%; background-color:transparent; display:flex; flex-direction: column;">
-						<text style="font-size:28rpx; margin-left:30rpx; margin-top:12rpx;margin-right:10rpx;  display: inline-block; white-space: nowrap; overflow: hidden; text-overflow:ellipsis;">{{item.Metric}}</text>
-						<text style="font-size: 28rpx; margin-left:30rpx; margin-top:12rpx; color:#007aff">{{item.Value}}</text>
+				<view class="data-items">
+					<view wx:for="{{todayData}}" wx:key="Item" class="data-item">
+						<text class="item-title">{{item.Metric}}</text>
+						<text class="item-value">{{item.Value}}</text>
 					</view>
 				</view>
 
