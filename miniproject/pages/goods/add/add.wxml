@@ -2,7 +2,7 @@
 
 <view>
 
-	<form catchsubmit="formSubmit">
+	<form bindsubmit="formSubmit">
 
 
 		<view class="selection-cell">
@@ -40,8 +40,18 @@
 
 		<view class="general_name">
 			<textarea name="general_name" maxlength="50" placeholder="商品通用名" />
-		</view>
+			</view>
 
+		<view class="add_image">
+		  <view class="add_image_content">
+				<wxs src="./add.wxs" module="tool"/>	
+		  	<view wx:for="{{tool.image_list(image_list)}}" wx:key="*this" class="add_image_item" bindtap="show_image" data-index="{{index}}" data-url="{{item}}">
+					<image src="{{item}}"  style="height:120rpx; width:120rpx"></image>
+				</view>
+			</view>
+			<view class="add_image_text">上传商品图（1-5张）</view>
+		</view>
+		
     <view class="selection-cell">
 			<view>贮藏条件</view>
 			<picker name="goodstype" range="{{store_types}}" value="{{store_index}}" bindchange="store_type_change">
@@ -124,4 +134,9 @@
 
 		<button type="primary" form-type="submit" style="margin: 50rpx auto; width: 600rpx">提交</button>
 	</form>
+
+
+		
+
+
 </view>

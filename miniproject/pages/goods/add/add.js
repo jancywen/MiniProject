@@ -38,6 +38,8 @@ Page({
     approve_number:'',
     // 通用名
     general_name: '',
+    // 图片
+    image_list:[],
     // 贮藏
     store_types: ["密封","干燥","冷藏"],
     store_index:0,
@@ -179,6 +181,40 @@ Page({
       government_standard_index:e.detail.value
     })
   }, 
+  /**
+  * 
+  */
+  show_image: function(e) {
+    const that = this
+    console.log(e.currentTarget.dataset)
+    console.log(that.data.image_list)
+    let index = e.currentTarget.dataset.index
+    let url = e.currentTarget.dataset.url
+    if (index < this.data.image_list.length) {
+      wx.previewImage({
+        urls: that.data.image_list,
+        current:url,
+      })
+    }else {
+      wx.chooseImage({
+        count: 5-that.data.image_list.length,
+        sizeType: ['original', 'compressed'],
+        sourceType: ['album', 'camera'],
+        success (res) {
+          // tempFilePath可以作为img标签的src属性显示图片
+          const tempFilePaths = res.tempFilePaths
+          let list  = that.data.image_list.concat(tempFilePaths)
+          that.setData({
+            image_list: list
+          })
+        }
+      })
+    }
+  },
+
+  /**
+   * 贮藏条件
+   */
   store_type_change: function(e) {
     this.setData({
       store_index: e.detail.value

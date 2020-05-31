@@ -1,0 +1,9 @@
+
+var image_list = function(e) {
+  if (e.length < 5) {
+    e.push('/images/add_icon.png')
+  }
+  return e
+}
+
+module.exports = {image_list: image_list}
