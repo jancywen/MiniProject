@@ -38,13 +38,13 @@ Page({
           id:3,
           src:'/images/quick-entry/goods-manage.png',
           title: "商品管理",
-          url: "/pages/form/form-check-box/form-check-box"
+          url: "/pages/custom/form-check-box/form-check-box"
         },
         {
           id:4,
           src:'/images/quick-entry/regist-recipe.png',
           title: "处方登记",
-          url: "/pages/action/action"
+          url: "/pages/custom/custom-component/custom-component"
         },
         {
           id:5,

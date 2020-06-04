@@ -223,38 +223,26 @@ Page({
     }
   },
    
-    uploadImage:function(path) {
-      const that = this
-      wx.uploadFile({
-        filePath: path,
-        name: 'Upload',
-        url: 'https://store.gmtshenzhen.cn/api/app/v1/store/upload/upload_pic',
-        success (res) {
-          console.log(res.data)
-          // let url = res.data
-          let data = JSON.parse(res.data)
-          // console.log("data" + data)
-          // console.log(data.Code)
-          // console.log(data.Message)
-          // console.log(data.Data)
-          // console.log(data.Data.Url)
-          // console.log(that.data.image_list)
-          // console.log(that.data.image_list.push(data.Data.Url))
-          if (data.Code === 0 ){
-            var list = that.data.image_list
-            list.push(data.Data.Url)
-            console.log("list" + list)
-            that.setData({
-              image_list: list
-            })
-            console.log(that.data.image_list)
-          }
-          else {
-            console.log(data.Code)
-          }
+  uploadImage:function(path) {
+    const that = this
+    wx.uploadFile({
+      filePath: path,
+      name: 'Upload',
+      url: 'https://store.gmtshenzhen.cn/api/app/v1/store/upload/upload_pic',
+      success (res) {
+        console.log(res.data)
+        let data = JSON.parse(res.data)
+        if (data.Code === 0 ){
+          var list = that.data.image_list
+          list.push(data.Data.Url)
+          console.log("list" + list)
+          that.setData({
+            image_list: list
+          })
         }
-      })
-    },
+      }
+    })
+  },
   remove_image: function(e){
     console.log(e.currentTarget.dataset.index)
     let index = e.currentTarget.dataset.index
