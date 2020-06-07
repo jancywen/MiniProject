@@ -5,7 +5,32 @@ Page({
    * 页面的初始数据
    */
   data: {
+    shareMaskData: [
+      {
+        leftImg:'/images/add_icon.png',
+        content:'转发给好友',
+        rightImg:'/images/drug_icon.png',
+        openType:'share',
+        hideLeftImage: false,
+        hideRightImage: true,
+      },
+      {
+        leftImg:'/images/add_icon.png',
+        content:'转发给好友',
+        rightImg:'/images/drug_icon.png',
+        openType:'share',
+        hideLeftImage: false,
+        hideRightImage: true,
+      }
+    ]
+  },
 
+  share: function() {
+    this.shareactionsheet=this.selectComponent('#shareactionsheet');
+    this.shareactionsheet.show();
+  },
+  clickActionSheet: function(e) {
+    console.log('e.detail: ' + e.detail); 
   },
 
   /**

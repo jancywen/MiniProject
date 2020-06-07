@@ -17,8 +17,7 @@
     "pages/inhand/purchase/detail/detail",
 
     "pages/custom/form-check-box/form-check-box",
-    "pages/custom/custom-component/custom-component",
-    "pages/custom/alert/alert"
+    "pages/custom/custom-component/custom-component"
   ],
   "tabBar":{
     "color": "#9b9b9b",

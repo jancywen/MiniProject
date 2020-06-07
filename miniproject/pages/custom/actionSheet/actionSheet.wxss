@@ -1,0 +1,76 @@
+/* pages/custom/actionSheet/actionSheet.wxss */
+
+.mask-container {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.bg-view {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 5000;
+  background: #eee;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px #969696;
+}
+
+.item-bg-view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 60rpx;
+  background: #fff;
+  position: relative;
+}
+.left-image {
+  max-width: 40rpx;
+  max-height: 40rpx;
+  margin-left: 15rpx;
+}
+.center-text {
+  margin-left: 15rpx;
+  font-size: 30rpx;
+  color: #323232;
+  width: 100%;
+}
+.right-image {
+  width: 8rpx;
+  height: 13rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+}
+.share-button {
+  display: block;
+  text-align: left;
+  width: 100%;
+  height: 60rpx;
+  background: orange;
+  opacity: 0;
+  position: absolute;
+}
+
+.dividing-line {
+  height: 1rpx;
+  background-color: lightgray;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+}
+
+.cancel-button{
+  width: 100%;
+  bottom: 0rpx;
+  height: 30px;
+  background: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  padding-top: 15rpx;
+}

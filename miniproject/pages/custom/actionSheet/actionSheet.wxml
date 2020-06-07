@@ -1,0 +1,17 @@
+<!--pages/custom/actionSheet/actionSheet.wxml-->
+
+<view class="mask-container" hidden="{{isHiddenMask}}" catchtap="hidden" catchtouchmove='prev'>
+	<view class="bg-view">
+    <block wx:for='{{itemData}}' wx:key='index'>
+      <view class="item-bg-view" style="margin-bottom:{{itemData.length-1==index ? 5 : 0}}rpx" data-index="{{index}}" catchtap="clickActionSheet">
+        <image class="left-image" src="{{item.leftImg}}" hidden="{{hideLeftImage}}"></image>
+        <text class="center-text" style="{{((hideLeftImage == true && hideRightImage == true) ? 'text-align: center;' : '')}}">{{item.content}}</text>
+        <image class="right-image" src='{{item.rightImg}}' hidden='{{hideRightImage}}'></image>
+        <button class="share-button" wx:if='{{item.openType == "share"}}' open-type="{{openType}}" hover-class="none" data-index="{{index}}" catchtap="clickActionSheet"></button>
+      </view>
+      <view class='dividing-line' wx:if='{{itemData.lenght > 0 && index != itemData.length - 1}}'></view>
+    </block>
+
+    <view class="cancel-button" bindtap="cancel">{{cancelText}}</view>
+	</view>
+</view>
