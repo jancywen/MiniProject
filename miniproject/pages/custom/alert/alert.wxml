@@ -1,2 +1,6 @@
 <!--pages/custom/alert/alert.wxml-->
-<text>pages/custom/alert/alert.wxml</text>
+
+<view class="container" hidden="{{isHiddenMask}}" bindtap="hide">
+<view> 组件 alert </view>
+<slot></slot>
+</view>

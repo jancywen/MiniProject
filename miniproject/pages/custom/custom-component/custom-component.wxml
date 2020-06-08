@@ -3,4 +3,7 @@
 <view>
 	<button bindtap="share"> click share</button>
 	<share-action-sheet id='shareactionsheet' itemData='{{shareMaskData}}' hideLeftImage cancelText='知道了' bind:clickActionSheet='clickActionSheet'></share-action-sheet>
+
+	<view bindtap="alert">alert</view>
+	<action-alert></action-alert>
 </view>

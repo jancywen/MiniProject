@@ -32,7 +32,10 @@ Page({
   clickActionSheet: function(e) {
     console.log('e.detail: ' + e.detail); 
   },
-
+  alert: function() {
+    this.actionalert = this.selectComponent('#actionalert');
+    this.actionalert.show()
+  },
   /**
    * 生命周期函数--监听页面加载
    */

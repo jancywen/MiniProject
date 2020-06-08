@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "share-action-sheet": "../actionSheet/actionSheet"
+    "share-action-sheet": "../actionSheet/actionSheet",
+    "action-alert": "../alert/alert"
   }
 }
