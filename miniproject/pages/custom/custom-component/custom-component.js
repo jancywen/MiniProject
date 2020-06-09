@@ -33,8 +33,11 @@ Page({
     console.log('e.detail: ' + e.detail); 
   },
   alert: function() {
-    this.actionalert = this.selectComponent('#actionalert');
+    this.actionalert = this.selectComponent('#alert');
     this.actionalert.show()
+  },
+  onAlertEvent: function(e) {
+    console.log(e.detail)
   },
   /**
    * 生命周期函数--监听页面加载
@@ -43,34 +46,35 @@ Page({
     wx.setNavigationBarTitle({
       title: '自定义组件',
     })
+    console.log('on load')
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    console.log('on ready')
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log('on show')
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    console.log('on hide')
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    console.log('on unload')
   },
 
   /**

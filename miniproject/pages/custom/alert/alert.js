@@ -4,7 +4,14 @@ Component({
    * 组件的属性列表
    */
   properties:{
-
+    min:{
+      type: Number,
+      value: 0,
+      observer: function(newValue, oldValue) {
+        console.log(newValue)
+        console.log(oldValue)
+      }
+    }
   },
 
   /**
@@ -13,7 +20,37 @@ Component({
   data: {
     isHiddenMask: true,
   },
-
+  /**
+   * 生命周期函数
+   */
+  lifetimes: {
+    created: function() {
+      // 创建时执行
+      console.log('组件被创建')
+    },
+    attached: function() {
+      // 在组件实例进入页面节点树时执行
+      console.log('组件实例进入页面节点树')
+    },
+    detached: function() {
+      // 在组件实例被从页面节点树移除时执行
+      console.log('组件实例被从页面节点树移除')
+    }
+  },
+  pageLifetimes: {
+    show: function() {
+      // 组件所在的页面被展示时执行
+      console.log("组件所在的页面被展示")
+    },
+    hide: function() {
+      // 组件所在的页面被隐藏时执行
+      console.log('组件所在的页面被隐藏')
+    },
+    resize: function() {
+      // 组件所在的页面尺寸变化时执行
+      console.log('组件所在的页面尺寸变化')
+    }
+  },
   /**
    * 组件的方法列表
    */
@@ -27,6 +64,17 @@ Component({
       this.setData({
         isHiddenMask: true
       });
+    },
+    onTap: function() {
+      this.triggerEvent('alertEvent', {some:'some',}, {})
+    },
+    changeMinValue: function() {
+      this.setData({
+        min: this.data.min + 1
+      })
+    },
+    changeValue: function() {
+
     }
   }
 })

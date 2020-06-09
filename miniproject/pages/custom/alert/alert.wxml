@@ -2,5 +2,9 @@
 
 <view class="container" hidden="{{isHiddenMask}}" bindtap="hide">
 <view> 组件 alert </view>
+
+<button catchtap="onTap">点击这个按钮将触发onAlertAction事件</button>
 <slot></slot>
+
+<button catchtap="changeMinValue">{{"更改属性的值：" + min}}</button>
 </view>
