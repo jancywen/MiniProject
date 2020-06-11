@@ -1,4 +1,6 @@
 //app.js
+
+import {promisifyAll, promisify} from 'miniprogram-api-promise'
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -40,7 +42,20 @@ App({
         this.globalData.screen_width = res.windowWidth
       },
     })
+
+    const wxp = {}
+    promisifyAll(wx, wxp)
+    wxp.getSystemInfo().then(this.someMethod).then(console.log)
+
   },
+
+
+  someMethod: function(res) {
+    console.log("someMethod")
+    console.log(res.windowHeight)
+    return 'something'
+  }
+  ,
   globalData: {
     userInfo: null,
     screen_width:0,

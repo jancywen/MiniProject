@@ -24,6 +24,10 @@ Component({
         console.log(newValue)
         console.log(oldValue)
       }
+    },
+    max: {
+      type: Number,
+      value:100,
     }
   },
 
@@ -32,6 +36,16 @@ Component({
    */
   data: {
     isHiddenMask: true,
+  },
+
+  /**
+   * 数据监听
+   */
+  observers: {
+    'min, max': function(min, max) {
+      // min 或 max 被设置时触发
+    },
+    
   },
   /**
    * 生命周期函数

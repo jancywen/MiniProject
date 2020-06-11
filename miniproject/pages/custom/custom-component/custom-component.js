@@ -1,3 +1,5 @@
+import { promisify } from "miniprogram-api-promise";
+
 // pages/custom/custom-component/custom-component.js
 Page({
 
@@ -51,6 +53,8 @@ Page({
       title: '自定义组件',
     })
     console.log('on load')
+
+    promisify(wx.getSystemInfo)().then(console.log)
   },
 
   /**
