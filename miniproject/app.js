@@ -45,15 +45,13 @@ App({
 
     const wxp = {}
     promisifyAll(wx, wxp)
-    wxp.getSystemInfo().then(this.someMethod).then(console.log)
+    wxp.getSystemInfo().then(this.someMethod).then(console.log).catch(console.log)
 
   },
-
-
   someMethod: function(res) {
     console.log("someMethod")
     console.log(res.windowHeight)
-    return 'something'
+    return "something"
   }
   ,
   globalData: {
