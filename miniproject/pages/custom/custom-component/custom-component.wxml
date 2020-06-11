@@ -5,5 +5,8 @@
 	<share-action-sheet id='shareactionsheet' itemData='{{shareMaskData}}' hideLeftImage cancelText='知道了' bind:clickActionSheet='clickActionSheet'></share-action-sheet>
 
 	<view bindtap="alert">alert</view>
-	<action-alert id="alert" bindalertEvent="onAlertEvent" min='5' />
+	<action-alert id="alert" class='childComponent' bindalertEvent="onAlertEvent" min='5' />
+
+	<view bindtap="catchAlert">获取alert对象</view>
+
 </view>

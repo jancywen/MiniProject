@@ -39,6 +39,10 @@ Page({
   onAlertEvent: function(e) {
     console.log(e.detail)
   },
+  catchAlert: function() {
+    var alert = this.selectComponent('.childComponent')
+    console.log(alert)
+  },
   /**
    * 生命周期函数--监听页面加载
    */

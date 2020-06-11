@@ -1,5 +1,18 @@
 
+
+
+var pageComponBehavior = require('../../../mod/page-common-behavior')
 Component({
+  /**
+   * 公共代码段
+   */
+  behaviors:[
+    pageComponBehavior,
+    'wx://component-export'
+  ],
+  export() {
+    return {key: 'value'}
+  },
   /**
    * 组件的属性列表
    */
@@ -75,6 +88,7 @@ Component({
     },
     changeValue: function() {
 
-    }
+    },
+    
   }
 })
