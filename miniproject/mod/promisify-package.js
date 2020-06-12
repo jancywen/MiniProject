@@ -1,6 +1,8 @@
 
-
-
+/**
+ * 网络请求
+ * @param {*} options 入参参考 wx.request
+ */
 function request(options={}) {
   return new Promise((resolve, reject)=>{
     wx.request(Object.assign(
@@ -21,7 +23,6 @@ function request(options={}) {
     ))
   })
 }
-
 
 module.exports = {
   request: request
