@@ -1,4 +1,7 @@
+
 // pages/home/home.js
+
+var common = require('../../mod/promisify-package.js')
 Page({
 
   /**
@@ -114,6 +117,24 @@ Page({
   queryTodayList: function() {
     console.log("请求今日数据")
     var myThis = this
+    common.request(
+      {url: 'https://store.gmtshenzhen.cn/api/app/v1/storage/dataview/statistics?_trace=fITAM1I53hPiFkv5xdf0yjwkh7gd7CEl&_version=1.0.0&_platform=IOS&_uid=QLjLgTMHLwFh7rMJV3wfDA&_storeId=62m3hM98kfQtgsRD95g2NU&_token=7a384896179e7caf42319f261fcac365&_device=DB72456F-B3CA-4EC6-B56A-8BE5059C2773&_time=1590460671&_sequence=2',
+      data: {},
+      header:{'content-type': 'application/json'},
+      timeout:6000,
+      method:"POST",
+    }).then((res)=> {
+      myThis.setData({
+        todayData: res.List
+      })
+    }).catch((error) => {
+      console.log(error);
+      wx.showToast({
+        title: error.Message,
+        icon: 'none'
+      })
+    })
+    /*
     wx.request({
       url: 'https://store.gmtshenzhen.cn/api/app/v1/storage/dataview/statistics?_trace=fITAM1I53hPiFkv5xdf0yjwkh7gd7CEl&_version=1.0.0&_platform=IOS&_uid=QLjLgTMHLwFh7rMJV3wfDA&_storeId=62m3hM98kfQtgsRD95g2NU&_token=7a384896179e7caf42319f261fcac365&_device=DB72456F-B3CA-4EC6-B56A-8BE5059C2773&_time=1590460671&_sequence=2',
       data: {},
@@ -140,6 +161,7 @@ Page({
       complete (result) {
       }
     })
+    */
   },
   /**
    * 生命周期函数--监听页面隐藏

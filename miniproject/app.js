@@ -45,15 +45,17 @@ App({
 
     const wxp = {}
     promisifyAll(wx, wxp)
-    wxp.getSystemInfo().then(this.someMethod).then(console.log).catch(console.log)
+    wxp.getSystemInfo().then(promisify(this.someMethod)).then(console.log).then((res) => {
+      console.log("你猜回打印出来啥", res)
+    })
 
   },
   someMethod: function(res) {
-    console.log("someMethod")
-    console.log(res.windowHeight)
-    return "something"
-  }
-  ,
+    return "someMethod 返回的参数： something"
+  },
+
+
+  
   globalData: {
     userInfo: null,
     screen_width:0,
