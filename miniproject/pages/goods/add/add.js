@@ -1,4 +1,5 @@
 // pages/goods/add/add.js
+var common = require('../../../mod/promisify-package.js')
 Page({
 
   /**
@@ -189,7 +190,7 @@ Page({
     console.log('匹配')
   },
   /**
-  * 
+  * 展示 / 添加图片
   */
   show_image: function(e) {
     const that = this
@@ -203,46 +204,22 @@ Page({
         current:url,
       })
     }else {
-      wx.chooseImage({
-        count: 5-that.data.image_list.length,
-        sizeType: ['original', 'compressed'],
-        sourceType: ['album', 'camera'],
-        success (res) {
-          // tempFilePath可以作为img标签的src属性显示图片
-          const tempFilePaths = res.tempFilePaths
-          // let list  = that.data.image_list.concat(tempFilePaths)
-          // that.setData({
-          //   image_list: list
-          // })
-          for (var path of tempFilePaths) {
-            that.uploadImage(path)
-          }
-
-        }
+      console.log('去选择图片')
+      common.uploadImage(5-that.data.image_list.length)
+      .then((list)=> {
+        console.log('图片上传成功')
+        console.log(list)
+        var images = that.data.image_list
+        that.setData({
+          image_list: images.concat(list)
+        })
       })
     }
   },
-   
-  uploadImage:function(path) {
-    const that = this
-    wx.uploadFile({
-      filePath: path,
-      name: 'Upload',
-      url: 'https://store.gmtshenzhen.cn/api/app/v1/store/upload/upload_pic',
-      success (res) {
-        console.log(res.data)
-        let data = JSON.parse(res.data)
-        if (data.Code === 0 ){
-          var list = that.data.image_list
-          list.push(data.Data.Url)
-          console.log("list" + list)
-          that.setData({
-            image_list: list
-          })
-        }
-      }
-    })
-  },
+  /**
+   * 删除图片
+   * @param {} e 
+   */
   remove_image: function(e){
     console.log(e.currentTarget.dataset.index)
     let index = e.currentTarget.dataset.index

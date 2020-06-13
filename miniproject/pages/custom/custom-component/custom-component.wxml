@@ -8,5 +8,5 @@
 	<action-alert id="alert" class='childComponent' bindalertEvent="onAlertEvent" min='5' />
 
 	<view bindtap="catchAlert">获取alert对象</view>
-
+	<view bindtap="chooseImage">chooseImage</view>
 </view>
